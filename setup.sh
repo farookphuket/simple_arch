@@ -80,24 +80,24 @@ cd ~/
 git clone https://github.com/farookphuket/archlinux_my_config.git 
 cd ~/archlinux_my_config 
 
-conf_dir=~/.config
+conf_dir=~/.config/
 
 # dwm source directory
-dwm_so=~/archlinux_my_config/CONFIG_FILES/dwm
+dwm_so=~/archlinux_my_config/CONFIG_FILES/dwm/
 
 
 # dmenu source directory
-dmenu_so=~/archlinux_my_config/CONFIG_FILES/dmenu
+dmenu_so=~/archlinux_my_config/CONFIG_FILES/dmenu/
 
 # st source directory
-st_so=~/archlinux_my_config/CONFIG_FILES/st
+st_so=~/archlinux_my_config/CONFIG_FILES/st/
 
 # sl source directory
-sl_so=~/archlinux_my_config/CONFIG_FILES/slstatus
+sl_so=~/archlinux_my_config/CONFIG_FILES/slstatus/
 
 
 # alacritty source directory
-alacritty_so=~/archlinux_my_config/CONFIG_FILES/alacritty
+alacritty_so=~/archlinux_my_config/CONFIG_FILES/alacritty/
 
 
 
@@ -109,10 +109,10 @@ cp -r $sl_so $conf_dir
 cp -r $alacritty_so $conf_dir
 
 # .dwm will call by dwm auto run script
-cp -r ~/archlinux_my_config/CONFIG_FILES/.dwm ~/
+cp -r ~/archlinux_my_config/CONFIG_FILES/.dwm/ ~/
 
 # compile the configuration 
-cd $conf_dir/dwm && sudo make clean install && cd $conf_dir/dmenu && sudo make clean install && cd $conf_dir/st && sudo make clean install && cd $conf_dir/slstatus && sudo make clean install && cd ~/archlinux_my_config 
+cd $conf_dir/dwm/ && sudo make clean install && cd $conf_dir/dmenu/ && sudo make clean install && cd $conf_dir/st/ && sudo make clean install && cd $conf_dir/slstatus/ && sudo make clean install && cd ~/archlinux_my_config 
 
 sleep 5s
 sh setup.sh
