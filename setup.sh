@@ -47,7 +47,7 @@ function setup_x(){
     mkdir Desktop Videos Pictures Documents Downloads .config 
 
     # install the xorg, and the need program
-    sudo pacman -S --needed --noconfirm xorg lxsession lxapperance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
+    sudo pacman -S --needed  xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 
     sleep 5s
 
