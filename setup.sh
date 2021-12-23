@@ -75,7 +75,11 @@ sh copy.sh
 cd ~/
 
 # install wallpapers 
-git clone https://gitlab.com/farookphuket/my_wallpapers_less.git ~/Pictures/wallpapers
+# last update command 23 Dec 2021
+git clone https://gitlab.com/farookphuket/my_wallpapers_less.git
+cd ~/my_wallpapers_less
+sh setup.sh 
+
 
 cd ~/
 # clone install script 
