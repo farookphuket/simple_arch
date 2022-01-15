@@ -14,7 +14,7 @@
 
 
 # Install Arch Linux Farook's way
-> install arck linux is not easy but it is not either difficult so please 
+> install arch linux is not easy but it is not either difficult so please 
 > check this video! it's maybe can help you some.
 > good luck
 

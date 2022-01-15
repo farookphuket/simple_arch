@@ -46,7 +46,7 @@ function setup_x(){
 
     cd ~/
     # make basic dir
-    mkdir -p Desktop Videos Pictures Documents Downloads .config 
+    mkdir -p Desktop Videos Pictures Documents Downloads Music .config 
 
     # install the xorg, and the need program
     sudo pacman -S --needed  xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
