@@ -68,7 +68,7 @@ cd ~/my_fonts
 sh copy_font.sh 
 cd ~/
 
-# install incons
+# install icons
 git clone https://gitlab.com/farookphuket/my_icons.git 
 cd ~/my_icons 
 sh copy.sh
@@ -121,7 +121,10 @@ cp -r ~/archlinux_my_config/CONFIG_FILES/.dwm/ ~/
 cd $conf_dir/dwm/ && sudo make clean install && cd $conf_dir/dmenu/ && sudo make clean install && cd $conf_dir/st/ && sudo make clean install && cd $conf_dir/slstatus/ && sudo make clean install && cd ~/archlinux_my_config 
 
 sleep 5s
+
+
 sh setup.sh
+
 cd ~/
 
 popd
