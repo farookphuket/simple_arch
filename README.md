@@ -3,7 +3,9 @@
 
 
 
-
+# Last update 
+## 22 Apr 2025
+> added `--needed --noconfirm` to the install command for make sure that the application will be install as needed 
 
 
 ## Install 
