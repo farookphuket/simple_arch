@@ -33,6 +33,20 @@ welcome || error "User choose to exit."
 x_dir_so=~/simple_arch/setup_x/xsessions
 x_dir_target=/usr/share/xsessions
 
+current_dwm=~/.config/dwm
+
+function isExistDWM() {
+  if [ -d "$current_dwm" ]; then
+    msg_box="\Z1Dear $USER we found your current dwm config.\\nyour current dwm config will be now renamed to \\n~/.config/dwm_old  \\n\\n-Farook"
+
+    dialog --colors --title "\Z0 found dwm config!" --msgbox "$msg_box" 16 60
+    mv $current_dwm ~/.config/dwm_old
+    echo " - your current dwm config has been renamed to dwm_old"
+  fi
+}
+
+isExistDWM
+
 function setup_x() {
   if [ -d "$x_dir_target" ]; then
     sudo cp $x_dir_so/dwm.desktop $x_dir_target
@@ -46,6 +60,25 @@ function setup_x() {
 
   # install the xorg, and the need program
   sudo pacman -Syu xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --needed --noconfirm
+
+  sudo pacman -Syu --needed --noconfirm tree htop feh nitrogen rofi sxhkd conky rsync nautilus krusader picom usbutils
+
+  sudo pacman -Syu --needed --noconfirm arandr xsel duf cmatrix
+
+  # 15 Jan 2022 i3exit install
+  pushd ~/
+  git clone https://aur.archlinux.org/i3exit.git
+  cd ~/i3exit
+  makepkg -si
+
+  sleep 5s
+  rm -rf ~/i3exit
+
+  # =============================================================================
+  # the folder `.dwm` is will call by `dwm` script for the auto load program like
+  # slstatus(to draw the status line) nitrogen(draw wall paper) etc,
+  # copy config folder
+  cp -r ~/archlinux_my_config/CONFIG_FILES/.dwm/ ~/
 
   sleep 5s
 
@@ -105,14 +138,12 @@ cp -r $st_so $conf_dir
 cp -r $sl_so $conf_dir
 cp -r $alacritty_so $conf_dir
 
-# .dwm will call by dwm auto run script
-cp -r ~/archlinux_my_config/CONFIG_FILES/.dwm/ ~/
-
 # compile the configuration
 cd $conf_dir/dwm/ && sudo make clean install && cd $conf_dir/dmenu/ && sudo make clean install && cd $conf_dir/st/ && sudo make clean install && cd $conf_dir/slstatus/ && sudo make clean install && cd ~/archlinux_my_config
 
 sleep 5s
 
+# run the script in archlinux_my_config
 sh setup.sh
 
 cd ~/
