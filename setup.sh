@@ -61,7 +61,7 @@ function setup_x() {
   # install the xorg, and the need program
   sudo pacman -Syu xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --needed --noconfirm
 
-  sudo pacman -Syu --needed --noconfirm tree htop feh nitrogen rofi sxhkd conky rsync nautilus krusader picom usbutils
+  sudo pacman -Syu --needed --noconfirm tree htop feh nitrogen rofi sxhkd conky rsync krusader picom usbutils
 
   sudo pacman -Syu --needed --noconfirm arandr xsel duf cmatrix
 
@@ -71,6 +71,7 @@ function setup_x() {
   cd ~/i3exit
   makepkg -si
 
+  cd ~/
   sleep 5s
   rm -rf ~/i3exit
 
@@ -86,6 +87,14 @@ function setup_x() {
   sudo systemctl enable lightdm
 }
 
+# make sure to be in the home folder
+cd ~/
+
+# clone install script
+git clone https://github.com/farookphuket/archlinux_my_config.git
+cd ~/archlinux_my_config
+
+# run script
 setup_x
 
 # clone setup script,font,theme and wallpapers
@@ -108,11 +117,6 @@ cd ~/
 git clone https://gitlab.com/farookphuket/my_wallpapers_less.git
 cd ~/my_wallpapers_less
 sh setup.sh
-
-cd ~/
-# clone install script
-git clone https://github.com/farookphuket/archlinux_my_config.git
-cd ~/archlinux_my_config
 
 conf_dir=~/.config/
 
@@ -162,6 +166,9 @@ function goodbye() {
     --backtitle "$b_title" \
     --msgbox "$MSG" \
     14 60
+
+  # back to home directory
+  cd ~/
 
   # delete the config dir
   sudo rm -rf ~/archlinux_my_config
