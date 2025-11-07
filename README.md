@@ -3,6 +3,21 @@
 
 
 
+
+# Using in Arch Linux 
+
+> last update 7 Nov 2025 
+> remove `Nitrogen`
+> change `htop` to `Btop`
+
+
+[btop]:https://ia801401.us.archive.org/7/items/arch_linux_myconfig_24-aug-2022_edit/btop_7-nov-2025.png
+![btop show][btop]
+
+--- 
+
+
+
 # Last update 
 ## 22 Apr 2025
 > added `--needed --noconfirm` to the install command for make sure that the application will be install as needed 

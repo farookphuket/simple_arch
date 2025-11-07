@@ -61,7 +61,7 @@ function setup_x() {
   # install the xorg, and the need program
   sudo pacman -Syu xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --needed --noconfirm
 
-  sudo pacman -Syu --needed --noconfirm tree htop feh nitrogen rofi sxhkd conky rsync krusader picom usbutils
+  sudo pacman -Syu --needed --noconfirm tree btop feh rofi sxhkd conky rsync krusader picom usbutils
 
   sudo pacman -Syu --needed --noconfirm arandr xsel duf cmatrix
 
