@@ -59,7 +59,7 @@ function setup_x() {
   mkdir -p Desktop Videos Pictures Documents Downloads Music .config
 
   # install the xorg, and the need program
-  sudo pacman -Syu xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --needed --noconfirm
+  sudo pacman -Syu xorg lxsession lxappearance polkit-gnome nautilus lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings curl make cmake perl gcc wget gwenview --needed --noconfirm
 
   sudo pacman -Syu --needed --noconfirm tree btop feh rofi sxhkd conky rsync krusader picom usbutils
 
